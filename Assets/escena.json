@@ -1,0 +1,14 @@
+{
+  "entidades": [
+    {
+      "nombre": "TextoPrueba1",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "nombre": "TextoPrueba2",
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

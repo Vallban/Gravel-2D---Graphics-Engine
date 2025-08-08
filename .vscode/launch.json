@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Gravel2D",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/Build/Debug/Gravel2D.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build Gravel2D",
+      "console": "internalConsole"
+    }
+  ]
+}

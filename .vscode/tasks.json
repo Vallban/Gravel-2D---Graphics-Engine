@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    {
+        "label": "build Gravel2D",
+        "type": "shell",
+        "command": "cmake --build Build",
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "problemMatcher": []
+    },
+    {
+        "label": "run Gravel2D",
+        "type": "shell",
+        "command": "${workspaceFolder}/Build/Gravel2D.exe",
+        "dependsOn": "build Gravel2D",
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "group": "test"
+    }
+  ]
+}
