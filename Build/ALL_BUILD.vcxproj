@@ -197,6 +197,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{4A55C623-7698-3673-ACC4-92E96C889721}</Project>
       <Name>ResourceManager</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\Scene.vcxproj">
+      <Project>{BF5A3146-4E5E-3294-BA26-C31B7C73302E}</Project>
+      <Name>Scene</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\SceneManager.vcxproj">
+      <Project>{61B52936-A32D-316F-9FFB-7FD30A382C04}</Project>
+      <Name>SceneManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

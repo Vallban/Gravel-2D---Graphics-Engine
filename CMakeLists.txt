@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Rutas a los códigos
 set(ENGINE_DIR "${CMAKE_SOURCE_DIR}/Engine")
 set(CORE_DIR "${ENGINE_DIR}/Core")
+    set(SCENE_DIR "${CORE_DIR}/Scenes")
 set(GRAPHICS_DIR "${ENGINE_DIR}/Graphics")
 set(UTILS_DIR "${ENGINE_DIR}/Utils")
 
@@ -27,6 +28,8 @@ endfunction()
 
 # Llamada a quitar librerías de la lista
 remove_libraries_from_list(ENGINE_SOURCES
+        ${SCENE_DIR}/Scene.cpp
+        ${SCENE_DIR}/SceneManager.cpp
     ${CORE_DIR}/Loader.cpp
     ${CORE_DIR}/ResourceManager.cpp
     ${GRAPHICS_DIR}/Framebuffer.cpp
@@ -44,6 +47,8 @@ function(add_engine_library libname srcdir)
 endfunction()
 
 # Llamada a añadir librerías
+    add_engine_library(Scene ${SCENE_DIR})
+    add_engine_library(SceneManager ${SCENE_DIR})
 add_engine_library(Loader ${CORE_DIR})
 add_engine_library(ResourceManager ${CORE_DIR})
 add_engine_library(Framebuffer ${GRAPHICS_DIR})
@@ -64,6 +69,7 @@ endif()
 # Añadir includes al ejecutable
 target_include_directories(Gravel2D PRIVATE
     ${ENGINE_DIR}/Core
+        ${ENGINE_DIR}/Core/Scenes
     ${ENGINE_DIR}/Graphics
     ${ENGINE_DIR}/Input
     ${ENGINE_DIR}/Utils
@@ -76,6 +82,8 @@ if (WIN32)
 endif()
 
 target_link_libraries(Gravel2D PRIVATE
+        Scene
+        SceneManager 
     Loader
     ResourceManager
     Framebuffer

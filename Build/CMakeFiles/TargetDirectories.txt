@@ -1,3 +1,5 @@
+C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/Scene.dir
+C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/SceneManager.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/Loader.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/ResourceManager.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/Framebuffer.dir

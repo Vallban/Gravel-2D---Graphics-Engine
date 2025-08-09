@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -104,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -115,7 +115,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;Debug\Loader.lib;Debug\ResourceManager.lib;Debug\Framebuffer.lib;Debug\RenderEngine.lib;Debug\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;Debug\Scene.lib;Debug\SceneManager.lib;Debug\Loader.lib;Debug\ResourceManager.lib;Debug\Framebuffer.lib;Debug\RenderEngine.lib;Debug\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -130,7 +130,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -148,10 +148,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -159,7 +159,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;Release\Loader.lib;Release\ResourceManager.lib;Release\Framebuffer.lib;Release\RenderEngine.lib;Release\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;Release\Scene.lib;Release\SceneManager.lib;Release\Loader.lib;Release\ResourceManager.lib;Release\Framebuffer.lib;Release\RenderEngine.lib;Release\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -174,7 +174,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -192,10 +192,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -203,7 +203,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;MinSizeRel\Loader.lib;MinSizeRel\ResourceManager.lib;MinSizeRel\Framebuffer.lib;MinSizeRel\RenderEngine.lib;MinSizeRel\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;MinSizeRel\Scene.lib;MinSizeRel\SceneManager.lib;MinSizeRel\Loader.lib;MinSizeRel\ResourceManager.lib;MinSizeRel\Framebuffer.lib;MinSizeRel\RenderEngine.lib;MinSizeRel\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -218,7 +218,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -235,10 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\Dev\Gravel2D\Engine\Core;C:\Users\alber\Dev\Gravel2D\Engine\Core\Scenes;C:\Users\alber\Dev\Gravel2D\Engine\Graphics;C:\Users\alber\Dev\Gravel2D\Engine\Input;C:\Users\alber\Dev\Gravel2D\Engine\Utils;C:\Users\alber\Dev\Gravel2D\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -246,7 +246,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;RelWithDebInfo\Loader.lib;RelWithDebInfo\ResourceManager.lib;RelWithDebInfo\Framebuffer.lib;RelWithDebInfo\RenderEngine.lib;RelWithDebInfo\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;RelWithDebInfo\Scene.lib;RelWithDebInfo\SceneManager.lib;RelWithDebInfo\Loader.lib;RelWithDebInfo\ResourceManager.lib;RelWithDebInfo\Framebuffer.lib;RelWithDebInfo\RenderEngine.lib;RelWithDebInfo\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -345,6 +345,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\ResourceManager.vcxproj">
       <Project>{4A55C623-7698-3673-ACC4-92E96C889721}</Project>
       <Name>ResourceManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\Scene.vcxproj">
+      <Project>{BF5A3146-4E5E-3294-BA26-C31B7C73302E}</Project>
+      <Name>Scene</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\SceneManager.vcxproj">
+      <Project>{61B52936-A32D-316F-9FFB-7FD30A382C04}</Project>
+      <Name>SceneManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
