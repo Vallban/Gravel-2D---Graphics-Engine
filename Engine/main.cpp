@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include "Core/Images.h"
 #include "Core/Loader.h"
 #include "Core/ResourceManager.h"
 #include "Graphics/Framebuffer.h"
@@ -17,7 +18,7 @@ struct VentanaBase {
     Core::ResourceManager recursos;
     Graphics::RenderEngine renderEngine;
 
-    std::vector<std::pair<std::wstring, POINT>> matrizImagenesPosiciones;
+    std::vector<Core::Imagen> imagenesConPosiciones;
 
     VentanaBase(int ancho = 1920, int alto = 1080)
         : anchoPantallaInvitado(ancho),
@@ -42,9 +43,9 @@ void update(float dt){
 void render(VentanaBase& estado){
     auto& render = estado.renderEngine;
     render.iniciarFrame(0xFF000000); // negro
-    for(const auto& par : estado.matrizImagenesPosiciones){
+    for(const auto& imagen : estado.imagenesConPosiciones){
         try {
-            render.dibujarImagen(par.first, par.second.x, par.second.y);
+            render.dibujarImagen(imagen.id, imagen.coordenadas.x, imagen.coordenadas.y);
         } catch (const std::exception& e) {
             // Imagen no cargada, error
         }
@@ -116,9 +117,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
     if (!hwnd) return 0;
 
     try {
-        Core::Loader::cargar(estado.recursos);
-        estado.matrizImagenesPosiciones.push_back({L"TextoPrueba1", {50, 50}});
-        estado.matrizImagenesPosiciones.push_back({L"TextoPrueba2", {100, 200}});
+        Core::Loader::cargar(estado.recursos, estado.imagenesConPosiciones);
     } catch (const std::exception& e) {
         MessageBoxA(nullptr, e.what(), "Error al cargar recursos", MB_ICONERROR);
         return 0;

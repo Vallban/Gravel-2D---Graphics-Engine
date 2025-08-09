@@ -1,14 +1,16 @@
 {
-  "entidades": [
+  "imagenes": [
     {
-      "nombre": "TextoPrueba1",
+      "id": "TextoPrueba1",
+      "ruta": "TextoPrueba1.bmp",
       "x": 0,
       "y": 0
     },
     {
-      "nombre": "TextoPrueba2",
-      "x": 0,
-      "y": 0
+      "id": "TextoPrueba2",
+      "ruta": "TextoPrueba2.bmp",
+      "x": 200,
+      "y": 150
     }
   ]
 }
