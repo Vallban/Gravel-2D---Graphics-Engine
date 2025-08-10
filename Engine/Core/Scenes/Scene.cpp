@@ -11,3 +11,7 @@ void Scene::activaSalida(){}
 
 void Scene::actualizar(float dt) {}
 void Scene::renderizar() {}
+
+std::wstring Scene::getName() const {
+    return name;
+}

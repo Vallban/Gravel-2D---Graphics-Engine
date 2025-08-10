@@ -35,6 +35,7 @@ remove_libraries_from_list(ENGINE_SOURCES
     ${GRAPHICS_DIR}/Framebuffer.cpp
     ${GRAPHICS_DIR}/RenderEngine.cpp
     ${UTILS_DIR}/BMP.cpp
+    ${UTILS_DIR}/DynamicSceneJSON.cpp
 )
 
 # Función para crear librerías estáticas estándar
@@ -54,6 +55,7 @@ add_engine_library(ResourceManager ${CORE_DIR})
 add_engine_library(Framebuffer ${GRAPHICS_DIR})
 add_engine_library(RenderEngine ${GRAPHICS_DIR})
 add_engine_library(BMP ${UTILS_DIR})
+add_engine_library(DynamicSceneJSON ${UTILS_DIR})
 
 # Añadir ejecutable principal
 add_executable(Gravel2D ${ENGINE_SOURCES})
@@ -89,4 +91,5 @@ target_link_libraries(Gravel2D PRIVATE
     Framebuffer
     RenderEngine
     BMP
+    DynamicSceneJSON
 )

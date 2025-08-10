@@ -5,6 +5,7 @@ C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/ResourceManager.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/Framebuffer.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/RenderEngine.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/BMP.dir
+C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/DynamicSceneJSON.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/Gravel2D.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/ALL_BUILD.dir
 C:/Users/alber/Dev/Gravel2D/Build/CMakeFiles/ZERO_CHECK.dir

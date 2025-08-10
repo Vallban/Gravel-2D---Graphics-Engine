@@ -10,6 +10,10 @@
 #include "Graphics/Framebuffer.h"
 #include "Graphics/RenderEngine.h"
 #include "Utils/BMP.h"
+#include "../Utils/DynamicSceneJSON.h"
+
+#define ANCHO 1920
+#define ALTO 1080
 
 struct VentanaBase {
     int anchoPantallaInvitado;
@@ -20,7 +24,7 @@ struct VentanaBase {
 
     std::vector<Core::Imagen> imagenesConPosiciones;
 
-    VentanaBase(int ancho = 1920, int alto = 1080)
+    VentanaBase(int ancho = ANCHO, int alto = ALTO)
         : anchoPantallaInvitado(ancho),
           altoPantallaInvitado(alto),
           framebuffer(),
@@ -115,6 +119,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
     SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(&estado));
 
     if (!hwnd) return 0;
+
+    DynamicSceneJSON::anyadirImagen("InterfazPrueba1", "InterfazPrueba1.bmp", 0, 0);
+    DynamicSceneJSON::anyadirImagen("TextoPrueba1", "Pruebas/TextoPrueba1.bmp", 300, 150);
+    DynamicSceneJSON::anyadirImagen("TextoPrueba2", "Pruebas/TextoPrueba2.bmp", 100, 200);
+    DynamicSceneJSON::crearEscena("Assets/escena.json");
 
     try {
         Core::Loader::cargar(estado.recursos, estado.imagenesConPosiciones);

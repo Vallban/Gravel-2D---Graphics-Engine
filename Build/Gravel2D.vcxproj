@@ -115,7 +115,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;Debug\Scene.lib;Debug\SceneManager.lib;Debug\Loader.lib;Debug\ResourceManager.lib;Debug\Framebuffer.lib;Debug\RenderEngine.lib;Debug\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;Debug\Scene.lib;Debug\SceneManager.lib;Debug\Loader.lib;Debug\ResourceManager.lib;Debug\Framebuffer.lib;Debug\RenderEngine.lib;Debug\BMP.lib;Debug\DynamicSceneJSON.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -159,7 +159,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;Release\Scene.lib;Release\SceneManager.lib;Release\Loader.lib;Release\ResourceManager.lib;Release\Framebuffer.lib;Release\RenderEngine.lib;Release\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;Release\Scene.lib;Release\SceneManager.lib;Release\Loader.lib;Release\ResourceManager.lib;Release\Framebuffer.lib;Release\RenderEngine.lib;Release\BMP.lib;Release\DynamicSceneJSON.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -203,7 +203,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;MinSizeRel\Scene.lib;MinSizeRel\SceneManager.lib;MinSizeRel\Loader.lib;MinSizeRel\ResourceManager.lib;MinSizeRel\Framebuffer.lib;MinSizeRel\RenderEngine.lib;MinSizeRel\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;MinSizeRel\Scene.lib;MinSizeRel\SceneManager.lib;MinSizeRel\Loader.lib;MinSizeRel\ResourceManager.lib;MinSizeRel\Framebuffer.lib;MinSizeRel\RenderEngine.lib;MinSizeRel\BMP.lib;MinSizeRel\DynamicSceneJSON.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -246,7 +246,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;RelWithDebInfo\Scene.lib;RelWithDebInfo\SceneManager.lib;RelWithDebInfo\Loader.lib;RelWithDebInfo\ResourceManager.lib;RelWithDebInfo\Framebuffer.lib;RelWithDebInfo\RenderEngine.lib;RelWithDebInfo\BMP.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;RelWithDebInfo\Scene.lib;RelWithDebInfo\SceneManager.lib;RelWithDebInfo\Loader.lib;RelWithDebInfo\ResourceManager.lib;RelWithDebInfo\Framebuffer.lib;RelWithDebInfo\RenderEngine.lib;RelWithDebInfo\BMP.lib;RelWithDebInfo\DynamicSceneJSON.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -329,6 +329,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\BMP.vcxproj">
       <Project>{F2D1C83A-4A7D-3FFA-A387-ED5D3329638B}</Project>
       <Name>BMP</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\DynamicSceneJSON.vcxproj">
+      <Project>{12AB0AE6-65ED-3B09-BED6-614BF90E7051}</Project>
+      <Name>DynamicSceneJSON</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\Framebuffer.vcxproj">
       <Project>{629A2419-640E-3695-9498-92D8339F479B}</Project>

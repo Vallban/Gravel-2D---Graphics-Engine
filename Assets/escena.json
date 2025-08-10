@@ -1,16 +1,25 @@
 {
-  "imagenes": [
-    {
-      "id": "TextoPrueba1",
-      "ruta": "TextoPrueba1.bmp",
-      "x": 0,
-      "y": 0
-    },
-    {
-      "id": "TextoPrueba2",
-      "ruta": "TextoPrueba2.bmp",
-      "x": 200,
-      "y": 150
+    "escena": {
+        "entidades": [],
+        "imagenes": [
+            {
+                "id": "InterfazPrueba1",
+                "ruta": "InterfazPrueba1.bmp",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "id": "TextoPrueba1",
+                "ruta": "Pruebas/TextoPrueba1.bmp",
+                "x": 300,
+                "y": 150
+            },
+            {
+                "id": "TextoPrueba2",
+                "ruta": "Pruebas/TextoPrueba2.bmp",
+                "x": 100,
+                "y": 200
+            }
+        ]
     }
-  ]
 }

@@ -177,6 +177,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{F2D1C83A-4A7D-3FFA-A387-ED5D3329638B}</Project>
       <Name>BMP</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\DynamicSceneJSON.vcxproj">
+      <Project>{12AB0AE6-65ED-3B09-BED6-614BF90E7051}</Project>
+      <Name>DynamicSceneJSON</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\alber\Dev\Gravel2D\Build\Framebuffer.vcxproj">
       <Project>{629A2419-640E-3695-9498-92D8339F479B}</Project>
       <Name>Framebuffer</Name>

@@ -10,9 +10,7 @@ namespace Core{
 void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagenesConPosiciones) {
     
     try {
-        recursos.cargarTextura(L"TextoPrueba1", L"assets/TextoPrueba1.bmp");
-        recursos.cargarTextura(L"TextoPrueba2", L"assets/TextoPrueba2.bmp");
-        std::ifstream archivo("assets/escena.json");
+        std::ifstream archivo("Assets/escena.json");
         if (!archivo.is_open()) {
             throw std::runtime_error("No se pudo abrir escena.json");
         }
@@ -20,14 +18,22 @@ void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagen
         nlohmann::json datos;
         archivo >> datos;
 
-        for (const auto& imagenJson : datos["imagenes"]) {
+        for (const auto& imagenJson : datos["escena"]["imagenes"]) {
             Imagen imagenConPosiciones;
             std::string nombre_str = imagenJson["id"].get<std::string>();
             imagenConPosiciones.id = std::wstring(nombre_str.begin(), nombre_str.end());
+
             std::string ruta_str = imagenJson["ruta"].get<std::string>();
-            imagenConPosiciones.ruta = std::wstring(ruta_str.begin(), ruta_str.end());
+            std::wstring ruta_w(ruta_str.begin(), ruta_str.end());
+            // Concatenar carpeta base Assets + ruta relativa del JSON
+            std::wstring basePath = L"Assets\\";
+            imagenConPosiciones.ruta = basePath + ruta_w;
+
             imagenConPosiciones.coordenadas.x = imagenJson["x"];
             imagenConPosiciones.coordenadas.y = imagenJson["y"];
+
+            recursos.cargarTextura(imagenConPosiciones.id, imagenConPosiciones.ruta);
+
             imagenesConPosiciones.push_back(imagenConPosiciones);
         }
 
