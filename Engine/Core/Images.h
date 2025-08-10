@@ -7,5 +7,6 @@ namespace Core {
         std::wstring id;
         std::wstring ruta;
         POINT coordenadas;
+        bool visible = false;
     };
 }

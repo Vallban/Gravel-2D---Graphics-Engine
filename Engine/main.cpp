@@ -48,10 +48,12 @@ void render(VentanaBase& estado){
     auto& render = estado.renderEngine;
     render.iniciarFrame(0xFF000000); // negro
     for(const auto& imagen : estado.imagenesConPosiciones){
-        try {
-            render.dibujarImagen(imagen.id, imagen.coordenadas.x, imagen.coordenadas.y);
-        } catch (const std::exception& e) {
-            // Imagen no cargada, error
+        if(imagen.visible){ // imagen es de tipo Imagen (Images.h)
+            try {
+                render.dibujarImagen(imagen.id, imagen.coordenadas.x, imagen.coordenadas.y);
+            } catch (const std::exception& e) {
+                // Imagen no cargada, error
+            }
         }
     }
 
