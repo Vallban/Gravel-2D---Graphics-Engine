@@ -7,7 +7,7 @@
 
 namespace Core{
 
-void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagenesConPosiciones) {
+void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagenesDeLaEscena) {
     
     try {
         std::ifstream archivo("Assets/escena.json");
@@ -19,22 +19,22 @@ void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagen
         archivo >> datos;
 
         for (const auto& imagenJson : datos["escena"]["imagenes"]) {
-            Imagen imagenConPosiciones;
+            Imagen imagenDeLaEscena;
             std::string nombre_str = imagenJson["id"].get<std::string>();
-            imagenConPosiciones.id = std::wstring(nombre_str.begin(), nombre_str.end());
+            imagenDeLaEscena.id = std::wstring(nombre_str.begin(), nombre_str.end());
 
             std::string ruta_str = imagenJson["ruta"].get<std::string>();
             std::wstring ruta_w(ruta_str.begin(), ruta_str.end());
             // Concatenar carpeta base Assets + ruta relativa del JSON
             std::wstring basePath = L"Assets\\";
-            imagenConPosiciones.ruta = basePath + ruta_w;
+            imagenDeLaEscena.ruta = basePath + ruta_w;
 
-            imagenConPosiciones.coordenadas.x = imagenJson["x"];
-            imagenConPosiciones.coordenadas.y = imagenJson["y"];
+            imagenDeLaEscena.coordenadas.x = imagenJson["x"];
+            imagenDeLaEscena.coordenadas.y = imagenJson["y"];
 
-            recursos.cargarTextura(imagenConPosiciones.id, imagenConPosiciones.ruta);
+            recursos.cargarTextura(imagenDeLaEscena.id, imagenDeLaEscena.ruta);
 
-            imagenesConPosiciones.push_back(imagenConPosiciones);
+            imagenesDeLaEscena.push_back(imagenDeLaEscena);
         }
 
     } catch (const std::exception& e) {

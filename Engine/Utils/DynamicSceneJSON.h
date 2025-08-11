@@ -6,10 +6,10 @@
 class DynamicSceneJSON {
 public:
     // Crea un archivo JSON de escena con el nombre y ruta indicados
-    static void crearEscena(const std::string& rutaArchivo);
+    static void crearEscenaEnJSON(const std::string& rutaArchivo);
 
     // Añadir imagen al JSON interno (antes de guardarlo)
-    static void anyadirImagen(
+    static void anyadirImagenEnJSON(
         const std::string& id,
         const std::string& ruta,
         int x,

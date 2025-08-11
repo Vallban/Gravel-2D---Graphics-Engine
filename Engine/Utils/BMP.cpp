@@ -53,7 +53,7 @@ namespace Utils {
 
         fclose(archivo);
 
-        return ImagenBMP{ w, h, std::move(pixeles) };
+        return ImagenBMP{w, h, std::move(pixeles) };
     }
 
 }

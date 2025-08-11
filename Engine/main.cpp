@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include "Core/Scenes/Scene.h"
+#include "Core/Scenes/SceneManager.h"
 #include "Core/Images.h"
 #include "Core/Loader.h"
 #include "Core/ResourceManager.h"
@@ -21,8 +23,6 @@ struct VentanaBase {
     Framebuffer framebuffer;
     Core::ResourceManager recursos;
     Graphics::RenderEngine renderEngine;
-
-    std::vector<Core::Imagen> imagenesConPosiciones;
 
     VentanaBase(int ancho = ANCHO, int alto = ALTO)
         : anchoPantallaInvitado(ancho),
@@ -44,18 +44,12 @@ void update(float dt){
     // mas adelante
 }
 
-void render(VentanaBase& estado){
+void render(VentanaBase& estado, SceneManager& escenaActual){
+
     auto& render = estado.renderEngine;
     render.iniciarFrame(0xFF000000); // negro
-    for(const auto& imagen : estado.imagenesConPosiciones){
-        if(imagen.visible){ // imagen es de tipo Imagen (Images.h)
-            try {
-                render.dibujarImagen(imagen.id, imagen.coordenadas.x, imagen.coordenadas.y);
-            } catch (const std::exception& e) {
-                // Imagen no cargada, error
-            }
-        }
-    }
+
+    escenaActual.renderizarEA(estado.renderEngine);
 
     render.finalizarFrame(); // si implementas overlays, post-procesado, etc.
 }
@@ -122,13 +116,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
 
     if (!hwnd) return 0;
 
-    DynamicSceneJSON::anyadirImagen("InterfazPrueba1", "InterfazPrueba1.bmp", 0, 0);
-    DynamicSceneJSON::anyadirImagen("TextoPrueba1", "Pruebas/TextoPrueba1.bmp", 300, 150);
-    DynamicSceneJSON::anyadirImagen("TextoPrueba2", "Pruebas/TextoPrueba2.bmp", 100, 200);
-    DynamicSceneJSON::crearEscena("Assets/escena.json");
+    DynamicSceneJSON::anyadirImagenEnJSON("InterfazPrueba1", "InterfazPrueba1.bmp", 0, 0);
+    DynamicSceneJSON::anyadirImagenEnJSON("TextoPrueba1", "Pruebas/TextoPrueba1.bmp", 300, 150);
+    DynamicSceneJSON::anyadirImagenEnJSON("TextoPrueba2", "Pruebas/TextoPrueba2.bmp", 100, 200);
+    DynamicSceneJSON::crearEscenaEnJSON("Assets/escena.json");
+
+    SceneManager escenaActiva(); 
+    // Revisar como crear un dato SceneManager
+    // ya que ahora tenemos el construtor pero
+    // Hay que entender cómo la estoy construyendo
 
     try {
-        Core::Loader::cargar(estado.recursos, estado.imagenesConPosiciones);
+        Core::Loader::cargar(estado.recursos, escenaActiva->imagenesDeLaEscena);
     } catch (const std::exception& e) {
         MessageBoxA(nullptr, e.what(), "Error al cargar recursos", MB_ICONERROR);
         return 0;
@@ -158,7 +157,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
         // Actualización y renderizado
         processInput();
         update(dt);
-        render(estado);
+        render(estado, escenaActiva);
         InvalidateRect(hwnd, nullptr, FALSE);
         float frameTime = 1.0f / 60.0f; // 60 FPS
         if (dt < frameTime) {
