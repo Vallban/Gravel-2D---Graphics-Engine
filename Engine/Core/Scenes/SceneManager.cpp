@@ -31,8 +31,8 @@
         }
     }
 
-    void SceneManager::renderizarEA(){
+    void SceneManager::renderizarEA(Graphics::RenderEngine& render){
         if (escenaActiva) {
-            escenaActiva->renderizar();
+            escenaActiva->renderizar(render);
         }
     }

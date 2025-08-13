@@ -30,7 +30,7 @@ void Scene::anyadirImagen(const Core::Imagen& imagen) {
 }
 
 bool Scene::escenaVisible(){
-
+    return false;
 }
 
 std::optional<std::reference_wrapper<Core::Imagen>> Scene::obtenerImagen(const std::wstring& id) {

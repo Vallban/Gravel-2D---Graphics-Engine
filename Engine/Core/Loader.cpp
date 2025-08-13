@@ -1,13 +1,14 @@
 #include "Loader.h"
+#include "../Core/Scenes/Scene.h"
 #include "Images.h"
-#include <fstream>
 #include "../Utils/json.hpp"
-#include <stdexcept> // Para std::runtime_error
+#include <fstream>
+#include <stdexcept>
 #include <windows.h>
 
 namespace Core{
 
-void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagenesDeLaEscena) {
+void Loader::cargar(Core::ResourceManager& recursos, Scene& escena) {
     
     try {
         std::ifstream archivo("Assets/escena.json");
@@ -20,21 +21,21 @@ void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagen
 
         for (const auto& imagenJson : datos["escena"]["imagenes"]) {
             Imagen imagenDeLaEscena;
-            std::string nombre_str = imagenJson["id"].get<std::string>();
-            imagenDeLaEscena.id = std::wstring(nombre_str.begin(), nombre_str.end());
+            std::string id = imagenJson["id"].get<std::string>();
+            imagenDeLaEscena.id = std::wstring(id.begin(), id.end());
 
-            std::string ruta_str = imagenJson["ruta"].get<std::string>();
-            std::wstring ruta_w(ruta_str.begin(), ruta_str.end());
+            std::string ruta = imagenJson["ruta"].get<std::string>();
+            std::wstring ruta_w(ruta.begin(), ruta.end());
             // Concatenar carpeta base Assets + ruta relativa del JSON
-            std::wstring basePath = L"Assets\\";
-            imagenDeLaEscena.ruta = basePath + ruta_w;
+            std::wstring rutaBase = L"Assets\\";
+            imagenDeLaEscena.ruta = rutaBase + ruta_w;
 
             imagenDeLaEscena.coordenadas.x = imagenJson["x"];
             imagenDeLaEscena.coordenadas.y = imagenJson["y"];
 
             recursos.cargarTextura(imagenDeLaEscena.id, imagenDeLaEscena.ruta);
 
-            imagenesDeLaEscena.push_back(imagenDeLaEscena);
+            escena.anyadirImagen(imagenDeLaEscena);
         }
 
     } catch (const std::exception& e) {
@@ -42,4 +43,4 @@ void Loader::cargar(Core::ResourceManager& recursos, std::vector<Imagen>& imagen
     }
 }
 
-} // namespace Graphics
+} // namespace Core

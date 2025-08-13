@@ -3,13 +3,14 @@
 #include <unordered_map>
 #include <string>
 #include "Scene.h"
-#include "../Graphics/RenderEngine.h"
+#include "../../Graphics/RenderEngine.h"
 
 // EA = Escena Activa
 
 class SceneManager {
     public:
-        SceneManager(std::shared_ptr<Scene> escenaInicial) : escenaActiva(escenaInicial) {}
+        SceneManager(std::shared_ptr<Scene> escenaInicial)
+        : escenaActiva(escenaInicial) {}
         
         void establecerEA(const std::wstring& name);
         void anyadirEscena(const std::wstring& name, std::shared_ptr<Scene> scene);
@@ -19,6 +20,6 @@ class SceneManager {
 
     private:
         std::unordered_map<std::wstring, std::shared_ptr<Scene>> escenas;
-        std::shared_ptr<Scene> escenaActiva; //EA
+        std::shared_ptr<Scene> escenaActiva;
 
 };

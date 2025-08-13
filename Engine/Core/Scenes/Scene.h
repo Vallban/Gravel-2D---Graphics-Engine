@@ -4,7 +4,7 @@
 #include <vector>
 #include <optional>
 #include "../Images.h"
-#include "../Graphics/RenderEngine.h"
+#include "../../Graphics/RenderEngine.h"
 
 class Scene {
     public:
@@ -28,5 +28,5 @@ class Scene {
     
         protected:
             std::wstring name;
-            std::vector<Core::Imagen>& imagenesDeLaEscena;
+            std::vector<Core::Imagen> imagenesDeLaEscena;
 };

@@ -44,12 +44,12 @@ void update(float dt){
     // mas adelante
 }
 
-void render(VentanaBase& estado, SceneManager& escenaActual){
+void render(VentanaBase& estado, SceneManager& escenaActiva){
 
     auto& render = estado.renderEngine;
     render.iniciarFrame(0xFF000000); // negro
 
-    escenaActual.renderizarEA(estado.renderEngine);
+    escenaActiva.renderizarEA(estado.renderEngine);
 
     render.finalizarFrame(); // si implementas overlays, post-procesado, etc.
 }
@@ -121,17 +121,26 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
     DynamicSceneJSON::anyadirImagenEnJSON("TextoPrueba2", "Pruebas/TextoPrueba2.bmp", 100, 200);
     DynamicSceneJSON::crearEscenaEnJSON("Assets/escena.json");
 
-    SceneManager escenaActiva(); 
-    // Revisar como crear un dato SceneManager
-    // ya que ahora tenemos el construtor pero
-    // Hay que entender cómo la estoy construyendo
-
+    std::shared_ptr<Scene> escena1 = std::make_shared<Scene>(L"EscenaPrincipal");
     try {
-        Core::Loader::cargar(estado.recursos, escenaActiva->imagenesDeLaEscena);
+        Core::Loader::cargar(estado.recursos, *escena1);
     } catch (const std::exception& e) {
         MessageBoxA(nullptr, e.what(), "Error al cargar recursos", MB_ICONERROR);
         return 0;
     }
+
+    std::shared_ptr<Scene> escena2 = std::make_shared<Scene>(L"EscenaSecundaria");
+    try {
+        Core::Loader::cargar(estado.recursos, *escena2);
+    } catch (const std::exception& e) {
+        MessageBoxA(nullptr, e.what(), "Error al cargar recursos", MB_ICONERROR);
+        return 0;
+    }
+
+    SceneManager ordenEscenas;
+    ordenEscenas.anyadirEscena(escena1->getName(), escena1);
+    ordenEscenas.anyadirEscena(escena2->getName(), escena2);
+    ordenEscenas.establecerEA(L"EscenaPrincipal");
 
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
@@ -156,7 +165,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow){
 
         // Actualización y renderizado
         processInput();
-        update(dt);
+        escenaActiva.actualizaEA(dt);
         render(estado, escenaActiva);
         InvalidateRect(hwnd, nullptr, FALSE);
         float frameTime = 1.0f / 60.0f; // 60 FPS
